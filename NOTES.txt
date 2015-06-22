@@ -3,37 +3,63 @@ The Penn Haptic Texture Toolkit was adapted for use with the MLHD by Randy Lee
 
 INSTRUCTIONS TO COMPILE AND BUILD:
 
-1. From the app root directory (i.e. /home/haptics/haptics/apps/haptic_texture_toolkit/)
+1. Download code from https://github.com/ralee9/PennHaTT_MLHD
+
+   or clone from https://github.com/ralee9/PennHaTT_MLHD.git
+   
+   Unzip and place all source code in a separate folder (i.e. /hatt_mlhd/), to 
+   enable out of source builds. 
+
+   
+2. From the app root directory (i.e. /home/haptics/apps/haptic_texture_toolkit/)
    make an empty "build" directory, using the terminal:
 
-	> mkdir build
+        >> mkdir build
 
-   or erase the current build directory (/haptic_texture_toolkit/build/)
+   or erase the current build directory (/haptic_texture_toolkit/build/). 
+   
+   The app root directory will now have the following structure:
+   
+        - haptic_texture_toolkit/
+           - build/
+           - hatt_mlhd/
+              - CMakeLists.txt
+              - src/
+              - include/
+              - gl/
+              - ml/
+              ... etc
 
-2. Run cmake from the build directory. Assuming we are in /haptic_texture_toolkit/:
+              
+3. Run cmake from the build directory. Assuming we are in /haptic_texture_toolkit/:
 	
-	> cd build
-	> cmake ../hatt_mlhd
+        >> cd build
+        >> cmake ../hatt_mlhd
 
    CMake 2.6.0 is the minimum required version of CMake. CMake will search the system for
-   OpenGL and GLUT libraries.
+   OpenGL and GLUT libraries. Boost (http://www.boost.org/) is also required.
 
-3. Run the make file created by CMake (still in the build directory)
+   
+4. Run the make file created by CMake (while still in /haptic_texture_toolkit/build/)
+   by entering
 
-	> make
+        >> make
 
    If CMake has been executed previously, "make" may be used to recompile and build the
-   executable if small changes have been made. Running "cmake ../hatt_mlhd" is not 
-   necessary.
+   executable if small changes have been made to the source code. Running 
+   "cmake ../hatt_mlhd" again is not necessary.
 
-4. The executable will be found in /haptic_texture_toolkit/build/build/
+   
+5. The executable will be found in /haptic_texture_toolkit/build/build/
 
 
+6. To create a desktop launcher for this application, the correct working PATH 
+must be specified, otherwise the texture images will not appear. The correct PATH is 
+/haptic_texture_toolkit/build/build/, the location of the executable. While the path
+to the icon may be slightly different, below is an example of a functioning
+Ubuntu <Haptic Texture Toolkit.desktop> file:
 
-**NOTE: when creating a desktop launcher for this application, the correct working PATH 
-ust be specified, otherwise the texture images will not appear. The correct PATH is 
-/haptic_texture_toolkit/build/build/, the location of the execuatble. Below is a functioning
-< .desktop> file:
+--------------------
 
 [Desktop Entry]
 Encoding=UTF-8
@@ -51,5 +77,39 @@ Icon=/home/haptics/haptics/apps/haptic_texture_toolkit/HaTT_MLHD_icon.png
 
 ----------------
 
+
+The following is the original README included with the Penn Haptic Texture Toolkit:
+********************************************************************************
+This code has been tested to run on a Linux computer running Ubuntu 12.04 LTS, with a GeForce GTX 570 graphics card and a SensAble Phantom Omni. 
+
+When running the code, you can use the following keys to change the texture and behavior of the system:
+
+Key Command List 
+-----------------------------------------
++ --> Scroll Forward Through Textures
+- --> Scroll Backward Through Textures
+F/f --> Toggle Friction ON/OFF
+T/t --> Toggle Texture ON/OFF
+M/m --> Display menu in Terminal
+
+Jump to Texture Group
+----------------------
+0 --> Paper
+1 --> Plastic
+2 --> Fabric
+3 --> Tile
+4 --> Carpet
+5 --> Foam
+6 --> Metal
+7 --> Stone
+8 --> Carbon Fiber
+9 --> Wood
+
+In order to compile and run the code the following library is needed:
+- Boost 
+	http://www.boost.org/ or the Ubuntu repository
+
+In addition, the Open Haptics 3.0 API has to be correctly configured and OpenGL must be working on the machine for the graphics to be rendered and work properly.
+**Please conserve relative pathnames
 
 
