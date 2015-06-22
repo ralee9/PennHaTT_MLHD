@@ -50,7 +50,11 @@ INSTRUCTIONS TO COMPILE AND BUILD:
    "cmake ../hatt_mlhd" again is not necessary.
 
    
-5. The executable will be found in /haptic_texture_toolkit/build/build/
+5. The executable will be found in /haptic_texture_toolkit/build/build/. To run
+   from the terminal
+        
+        >> cd build
+        >> ./HaTT_MLHD
 
 
 6. To create a desktop launcher for this application, the correct working PATH 
