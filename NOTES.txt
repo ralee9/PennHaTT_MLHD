@@ -1,0 +1,55 @@
+The Penn Haptic Texture Toolkit was adapted for use with the MLHD by Randy Lee 
+(ral63@pitt.edu) for Butterfly Haptics (Pittsburgh, PA). Compiled and built on Ubuntu 8.10
+
+INSTRUCTIONS TO COMPILE AND BUILD:
+
+1. From the app root directory (i.e. /home/haptics/haptics/apps/haptic_texture_toolkit/)
+   make an empty "build" directory, using the terminal:
+
+	> mkdir build
+
+   or erase the current build directory (/haptic_texture_toolkit/build/)
+
+2. Run cmake from the build directory. Assuming we are in /haptic_texture_toolkit/:
+	
+	> cd build
+	> cmake ../hatt_mlhd
+
+   CMake 2.6.0 is the minimum required version of CMake. CMake will search the system for
+   OpenGL and GLUT libraries.
+
+3. Run the make file created by CMake (still in the build directory)
+
+	> make
+
+   If CMake has been executed previously, "make" may be used to recompile and build the
+   executable if small changes have been made. Running "cmake ../hatt_mlhd" is not 
+   necessary.
+
+4. The executable will be found in /haptic_texture_toolkit/build/build/
+
+
+
+**NOTE: when creating a desktop launcher for this application, the correct working PATH 
+ust be specified, otherwise the texture images will not appear. The correct PATH is 
+/haptic_texture_toolkit/build/build/, the location of the execuatble. Below is a functioning
+< .desktop> file:
+
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=true
+Name[en_US]=Haptic Texture Toolkit
+Exec=/home/haptics/haptics/apps/haptic_texture_toolkit/build/build/HaTT_MLHD
+Path=/home/haptics/haptics/apps/haptic_texture_toolkit/build/build/
+Comment[en_US]=Explore virtual textures using the MLHD
+Icon[en_US]=/home/haptics/haptics/apps/haptic_texture_toolkit/HaTT_MLHD_icon.png
+Name=Haptic Texture Toolkit
+Comment=Explore virtual textures using the MLHD
+Icon=/home/haptics/haptics/apps/haptic_texture_toolkit/HaTT_MLHD_icon.png
+
+----------------
+
+
+
