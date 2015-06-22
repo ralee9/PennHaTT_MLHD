@@ -13,4 +13,4 @@ Detailed instructions to build the project can be found in NOTES.txt. For compar
 Haptic Texture Toolkit can be found in /build/TexturedSphere. The original source code, texture models, and recorded
 data for the Haptic Texture Toolkit may be found at the Penn repository linked above.
 
-CMake 2.6.0, OpenGL, and GLUT are required to build the project. MLHD libraries and headers are included.
+CMake 2.6.0, OpenGL, GLUT, and Boost are required to build the project. MLHD libraries and headers are included.
